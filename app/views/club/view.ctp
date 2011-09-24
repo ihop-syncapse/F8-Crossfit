@@ -2,7 +2,12 @@
 
 echo $this->element('club/header'); 
 echo $this->element('club/location');
+
+$club_fb_url = sprintf('http://www.facebook.com/%s/', $club['Club']['fbid']);
+$club_fb_url = $club['Club']['url'];
 ?>
+<div style="clear: left;"></div>
+<fb:like href="<?php echo $club_fb_url; ?>"></fb:like>
 
 <h3>Recent Workouts</h3>
 <ul class="workout-list">

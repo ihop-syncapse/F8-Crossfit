@@ -302,5 +302,7 @@
  *
  */
 	Cache::config('default', array('engine' => 'File'));
+    
+Configure::write('App.url', 'http://crossfit.icadev.com/');
 
 require_once(dirname(__FILE__) . '/facebook.php');

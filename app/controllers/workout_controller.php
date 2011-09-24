@@ -24,8 +24,12 @@ class WorkoutController extends AppController {
     }
     
     function _setupOpenGraph($workout) {
+        // render the open graph tags
+        $view = new View($this);
+        $og_for_layout = $view->element('workout/og', compact('workout'));
         
-        
+        // send them to the layout
+        $this->set(compact('og_for_layout'));
     }
     
     function attend($workout_id, $user_fbid, $story_fbid) {

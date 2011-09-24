@@ -2,13 +2,15 @@
 
 echo $this->element('club/header'); 
 $workout_date = date('M d, Y', strtotime($workout['Workout']['date']));
+$workout_details = str_replace("\n", "<br/>\n", $workout['Workout']['description']);
 ?>
 
 <h3>Workout</h3>
 <dl>
  <dt>date</dt><dd><?php echo $workout_date; ?></dd>
+ <dt>details</dt><dd style="margin-left: 60px;"><?php echo $workout_details; ?></dd>
 </div>
-<h3>Details</h3>
+<h3>People</h3>
 <dl>
  <dt>attending</dt><dd><?php echo $attending . ' ' . __n('person', 'people', $attending, true); ?></dd>
  <dt>completed</dt><dd><?php echo $completed . ' ' . __n('person', 'people', $completed, true); ?></dd>
@@ -39,7 +41,7 @@ $('#complete').click(function() {
         var score = $('#score').val();
         var url = '/me/<?php echo Configure::read('Facebook.namespace') ?>:complete?workout=' + escape(document.location) + '&score=' + score;
         FB.api(url, function(response) {
-            alert('completed');
+            alert('completed: ' + JSON.stringify(response));
         });
     });
 });

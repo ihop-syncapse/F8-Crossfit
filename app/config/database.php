@@ -11,6 +11,16 @@ class DATABASE_CONFIG {
 		'database' => 'crossfit',
 		'prefix' => '',
 	);
+    
+    var $default_prod = array(
+		'driver' => 'mysql',
+		'persistent' => false,
+		'host' => 'mysql.icadev.com',
+		'login' => 'icadev_crossfit',
+		'password' => '89bits',
+		'database' => 'icadev_crossfit',
+		'prefix' => '',
+	);
 
 	var $test = array(
 		'driver' => 'mysql',
@@ -21,4 +31,11 @@ class DATABASE_CONFIG {
 		'database' => 'test_crossfit',
 		'prefix' => '',
 	);
+    
+    function __construct() {
+        //print $_SERVER['SERVER_NAME'];
+        if ($_SERVER['SERVER_NAME'] == 'crossfit.icadev.com') {
+            $this->default = $this->default_prod;
+        }
+    }
 }
