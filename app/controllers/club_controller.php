@@ -28,7 +28,11 @@ class ClubController extends AppController {
         
         $club = $this->Club->read(null, $club_id);
         
-        $workouts = $this->paginate('Workout');
+        $conditions = array(
+            'Workout.club_id' => $club_id
+            );
+        
+        $workouts = $this->paginate('Workout', $conditions);
         
         $this->set(compact('club', 'workouts'));
     }

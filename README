@@ -1,0 +1,15 @@
+Title: F8 Crossfit Facebook Integration
+Started: September 23, 2011
+For: Facebook F8 Conference Hack
+By: Ian Hopkins (i.hopkins@syncapse.com)
+
+Purpose: Allow crossfit members to share their workouts and
+integrate their community into Facebook to share their progress
+and encourage each other.
+
+Uses:
+ CakePHP
+ Facebook OpenGraph API
+
+Built For:
+ Mobile Web

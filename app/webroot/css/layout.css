@@ -2,6 +2,10 @@
             GLOBAL DEFINITIONS
   ------------------------------------------*/
 
+body {
+    margin: 0;
+}
+
 body, table {
     font-family: Arial;
     font-size: 12px;
@@ -11,7 +15,9 @@ body, table {
     width: 200px;
     height: 70px;
     background: url('../img/crossfit.gif') no-repeat center bottom;
+    margin: 5px auto 0;
 }
+
 
 /*------------------------------------------
             CLUB
@@ -19,14 +25,20 @@ body, table {
 
 ul.club-list {
     list-style-type: none;
-    margin: none;
-    padding: none;
+    margin: 0;
+    padding: 0;
+}
+ul.club-list a {
+    text-decoration: none;
+}
+ul.club-list h3 {
+    color: #367889;
 }
 ul.club-list li {
     min-height: 50px;
     border-bottom: 1px solid #CCCCCC;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
+    padding: 5px 5px;
+    background: url('../img/right-arrow.png') no-repeat right center;
 }
 ul.club-list li img {
     float: left;
@@ -34,7 +46,52 @@ ul.club-list li img {
     padding-right: 5px;
 }
 
+.club-header img {
+    float: left;
+    width: 50px; height: 50px;
+    padding-right: 5px;
+}
+.club-header {
+    min-height: 50px;
+}
+.club-header h3 {
+    color: #367889;
+}
+
+.club-location dt {
+    float: left;
+    width: 50px;
+    color: #999999;
+    padding: 5px 5px 0px 5px;
+    text-align: right;
+}
+.club-location dd {
+    padding: 5px 5px 0;
+}
+
 /*------------------------------------------
             WORKOUT
   ------------------------------------------*/
 
+ul.workout-list {
+    border-top: 1px solid #CCCCCC;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.workout-list li {
+    min-height: 20px;
+    border-bottom: 1px solid #CCCCCC;
+    padding: 5px 5px;
+    background: url('../img/right-arrow.png') no-repeat right center;
+}
+ul.workout-list a {
+    text-decoration: none;
+}
+
+ul.workout-list li {
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+}
