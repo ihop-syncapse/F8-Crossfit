@@ -7,17 +7,20 @@ $club_fbid = $club['Club']['fbid'];
 
 var location_fbid = '<?php echo $club_fbid; ?>';
 FB.api('/' + location_fbid, function(response) {
-   $('.club-location .street').text(response.location.street);
-   $('.club-location .city').text(response.location.city);
-   $('.club-location .state').text(response.location.state);
-   $('.club-location .country').text(response.location.country);
-   $('.club-location .zip').text(response.location.zip);
+    if (response.location) {
+       $('.club-location .street').text(response.location.street);
+       $('.club-location .city').text(response.location.city);
+       $('.club-location .state').text(response.location.state);
+       $('.club-location .country').text(response.location.country);
+       $('.club-location .zip').text(response.location.zip);
+    } else {
+        $('.club-location').hide();
+    }
 });
 
 
 </script>
 
-<h3>Location</h3>
 <dl class="club-location">
  <dt>street</dt><dd class="street">loading...</dd>
  <dt>city</dt><dd class="city"></dd>

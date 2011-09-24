@@ -16,11 +16,7 @@ class WorkoutController extends AppController {
     
     function attend($id) {
         
-        $this->
-        
-        // create the story in facebook
-        $story_id = 
-        
+        $this->redirect('/workout/view/' . $id);
     }
     
     function complete($id) {
