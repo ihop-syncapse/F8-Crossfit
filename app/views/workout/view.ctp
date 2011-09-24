@@ -1,7 +1,59 @@
-<?php echo $this->element('club/header'); ?>
+<?php
+
+echo $this->element('club/header'); 
+$workout_date = date('M d, Y', strtotime($workout['Workout']['date']));
+?>
 
 <h3>Workout</h3>
-<div class="workout-info">
- <label class="date-label">date:</label>
- <span class="date-value"><?php echo $workout_date; ?></label>
+<dl>
+ <dt>date</dt><dd><?php echo $workout_date; ?></dd>
 </div>
+<h3>Details</h3>
+<dl>
+ <dt>attending</dt><dd><?php echo $attending . ' ' . __n('person', 'people', $attending, true); ?></dd>
+ <dt>completed</dt><dd><?php echo $completed . ' ' . __n('person', 'people', $completed, true); ?></dd>
+</dl>
+<a href="#" class="button" id="attend">Attend</a> |
+<a href="#" class="button" id="complete_show">Complete</a>
+<form id="complete_form" style="display: none;">
+ <label for="score">Score</label>
+ <input type="text" name="score" id="score" /><br/>
+ <a href="#" class="button" id="complete">Complete</a>
+</form>
+
+<script type="text/javascript">
+$('#attend').click(function() {
+    fb_require_login(function() {
+        var url = '/me/<?php echo Configure::read('Facebook.namespace') ?>:attend?workout=' + escape(document.location);
+        FB.api(url, function(response) {
+            alert('attending');
+        });
+    });
+});
+$('#complete_show').click(function() {
+    $(this).hide();
+    $('#complete_form').show();
+});
+$('#complete').click(function() {
+    fb_require_login(function() {
+        var score = $('#score').val();
+        var url = '/me/<?php echo Configure::read('Facebook.namespace') ?>:complete?workout=' + escape(document.location) + '&score=' + score;
+        FB.api(url, function(response) {
+            alert('completed');
+        });
+    });
+});
+</script>
+
+<h3>Leaderboard</h3>
+<ul class="leaderboard-list">
+<?php foreach($completions as $completion):
+    $user_picture = sprintf('http://graph.facebook.com/%s/picture', $completion['WorkoutCompletion']['user_fbid']);
+    ?>
+    <li>
+     <img src="<?php echo $user_picture; ?>" />
+     <b>User Name</b><br/>
+     Score: <?php echo $user_score; ?>
+    </li>
+<?php endforeach;?>
+</ul>

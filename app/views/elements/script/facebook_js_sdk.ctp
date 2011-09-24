@@ -9,4 +9,14 @@
     <?php /*channelURL : 'http://WWW.MYDOMAIN.COM/channel.html', // channel.html file */ ?>
     oauth  : true // enable OAuth 2.0
   });
+  
+  function fb_require_login(callback) {
+      FB.login(function() {
+          if (response.authResponse) {
+              callback();
+          } else {
+              alert('You need to connect to Facebook to complete this action.');
+          }
+      }, {scope: ''});
+  }
 </script>

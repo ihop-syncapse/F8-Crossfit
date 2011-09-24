@@ -58,14 +58,14 @@ ul.club-list li img {
     color: #367889;
 }
 
-.club-location dt {
+dt {
     float: left;
-    width: 50px;
+    width: 55px;
     color: #999999;
     padding: 5px 5px 0px 5px;
     text-align: right;
 }
-.club-location dd {
+dd {
     padding: 5px 5px 0;
 }
 

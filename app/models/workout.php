@@ -1,7 +1,7 @@
 <?php
 
 class Workout extends AppModel {
-    var $belongsTo = array('Club');
+    var $belongsTo = array('Club', 'ScoreType');
     
     function findForDate($club_id, $date) {
         
