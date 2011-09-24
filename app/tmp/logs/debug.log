@@ -1,2 +1,0 @@
-2011-09-23 20:35:01 Notice: Notice (1024): Please change the value of 'Security.salt' in app/config/core.php to a salt value specific to your application in [/ws/syncapse/ninja/crossfit/cake/libs/debugger.php, line 694]
-2011-09-23 20:35:01 Notice: Notice (1024): Please change the value of 'Security.cipherSeed' in app/config/core.php to a numeric (digits only) seed value specific to your application in [/ws/syncapse/ninja/crossfit/cake/libs/debugger.php, line 698]
