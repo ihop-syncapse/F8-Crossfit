@@ -10,6 +10,9 @@ body, table {
     font-family: Arial;
     font-size: 12px;
 }
+a {
+    color: #367889;
+}
 
 .footer {
     width: 200px;
@@ -18,32 +21,36 @@ body, table {
     margin: 5px auto 0;
 }
 
+ul.link-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #CCCCCC;
+}
+ul.link-list a {
+    text-decoration: none;
+}
+ul.link-list li {
+    min-height: 20px;
+    border-bottom: 1px solid #CCCCCC;
+    padding: 5px 5px;
+    background: url('../img/right-arrow.png') no-repeat right center;
+}
+ul.link-list li img.icon {
+    float: left;
+    padding-right: 5px;
+}
+
 
 /*------------------------------------------
             CLUB
   ------------------------------------------*/
 
-ul.club-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-ul.club-list a {
-    text-decoration: none;
-}
-ul.club-list h3 {
-    color: #367889;
-}
 ul.club-list li {
     min-height: 50px;
-    border-bottom: 1px solid #CCCCCC;
-    padding: 5px 5px;
-    background: url('../img/right-arrow.png') no-repeat right center;
 }
-ul.club-list li img {
-    float: left;
+ul.club-list li img.icon {
     width: 50px; height: 50px;
-    padding-right: 5px;
 }
 
 .club-header img {
@@ -73,25 +80,18 @@ dd {
             WORKOUT
   ------------------------------------------*/
 
-ul.workout-list {
-    border-top: 1px solid #CCCCCC;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-ul.workout-list li {
-    min-height: 20px;
-    border-bottom: 1px solid #CCCCCC;
-    padding: 5px 5px;
-    background: url('../img/right-arrow.png') no-repeat right center;
-}
-ul.workout-list a {
-    text-decoration: none;
-}
-
 ul.workout-list li {
     color: black;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+/*------------------------------------------
+            NAV
+  ------------------------------------------*/
+
+ul.nav-list li {
     font-weight: bold;
     font-size: 14px;
 }

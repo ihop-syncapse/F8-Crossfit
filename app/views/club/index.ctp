@@ -1,6 +1,6 @@
 <h2 class="header">Crossfit Clubs</h2>
 
-<ul class="club-list">
+<ul class="link-list club-list">
 <?php foreach ($clubs as $club): 
     $club_picture = sprintf('http://graph.facebook.com/%s/picture', $club['Club']['fbid']);
     $club_name = $club['Club']['name'];
@@ -8,7 +8,7 @@
     ?>
  <a href="<?php echo $club_link ?>">
  <li>
-  <img src="<?php echo $club_picture; ?>" />
+  <img src="<?php echo $club_picture; ?>" class="icon"/>
   <h3><?php echo $club_name; ?></h3>
  </li>
  </a>

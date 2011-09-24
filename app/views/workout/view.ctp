@@ -27,8 +27,8 @@ $workout_details = str_replace("\n", "<br/>\n", $workout['Workout']['description
 $('#attend').click(function() {
     fb_require_login(function() {
         var url = '/me/<?php echo Configure::read('Facebook.namespace') ?>:attend?workout=' + escape(document.location);
-        FB.api(url, function(response) {
-            alert('attending');
+        FB.api(url, 'post', function(response) {
+            alert('attending' + JSON.);
         });
     });
 });
